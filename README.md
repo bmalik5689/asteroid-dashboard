@@ -1,10 +1,10 @@
-Web Development Project 6 - _Name of App Here_
+Web Development Project 6 - 🚀 Asteroid Tracker Dashboard
 
-Submitted by: **Your Name Here**
+Submitted by: Bisma Naeem Malik
 
-This web app: **insert description**
+This web app: This app visualizes real-time data from NASA’s Near-Earth Object API, letting users explore approaching asteroids by size, speed, and hazard level—all wrapped in a sleek, interactive dashboard.
 
-Time spent: **X** hours spent in total
+Time spent: 10 hours spent in total
 
 ## Required Features
 
