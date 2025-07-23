@@ -1,21 +1,31 @@
+/* General Layout and Theme */
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
+
 body {
   font-family: system-ui, sans-serif;
   background-color: #0b0c10;
   color: #f4f4f4;
   padding: 20px;
+  margin: 0;
 }
 
+/* Headings */
 h1 {
   text-align: center;
   color: #66fcf1;
 }
 
+h2 {
+  margin-bottom: 12px;
+  color: #66fcf1;
+}
+
+/* Labels and Inputs */
 label {
   display: block;
   margin: 12px 0 6px;
@@ -31,11 +41,24 @@ input[type="date"] {
   color: #fff;
 }
 
+input[type="range"] {
+  width: 100%;
+}
+
 input[type="checkbox"] {
   margin-left: 6px;
 }
 
-.media-card,
+/* Stats Section */
+.stats {
+  background-color: #1f2833;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #45a29e;
+}
+
+/* Asteroid Cards */
 .asteroid-card {
   background-color: #1f2833;
   border: 1px solid #45a29e;
@@ -43,21 +66,63 @@ input[type="checkbox"] {
   padding: 16px;
   margin: 16px 0;
   box-shadow: 0 0 10px #45a29e50;
+  text-align: left;
 }
 
-p {
+.asteroid-card h3 {
+  margin-top: 0;
+  color: #66fcf1;
+}
+
+.asteroid-card p {
   margin: 4px 0;
 }
 
+/* Charts Section */
+.dashboard-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.asteroid-list-panel {
+  flex: 2;
+  min-width: 320px;
+}
+
+.chart-panel {
+  flex: 1;
+  min-width: 300px;
+}
+
+.chart-block {
+  background-color: #1f2833;
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #45a29e;
+  box-shadow: 0 0 10px #45a29e50;
+  color: #f4f4f4;
+}
+
+/* Visual Divider */
 hr {
   border-color: #45a29e;
   margin: 20px 0;
 }
 
-.stats {
-  background-color: #1f2833;
-  padding: 12px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  border: 1px solid #45a29e;
+/* Responsive Adjustment */
+@media (max-width: 800px) {
+  .dashboard-flex {
+    flex-direction: column;
+  }
+
+  input[type="range"] {
+    width: 100%;
+  }
+
+  .chart-panel {
+    margin-top: 30px;
+  }
 }
