@@ -6,7 +6,6 @@ function Sidebar() {
     <div className="app-container">
       <aside className="sidebar">
         <Link to="/">Dashboard</Link>
-        <Link to="/charts">Charts</Link>
         <Link to="/about">About</Link>
       </aside>
       <main className="main-content">

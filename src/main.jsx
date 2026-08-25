@@ -5,7 +5,6 @@ import App from "./App.jsx";
 import DetailView from "./components/Detailview.jsx";
 import "./index.css";
 import Sidebar from "./components/Sidebar.jsx";
-import Charts from "./components/Charts.jsx";
 import About from "./components/About.jsx";
 
 const root = createRoot(document.getElementById("root"));
@@ -17,10 +16,9 @@ root.render(
         <Route path="/" element={<Sidebar />}>
           <Route index element={<App />} />
           <Route path="asteroid/:id" element={<DetailView />} />
-          <Route path="charts" element={<Charts />} />
           <Route path="about" element={<About />} />
         </Route>
       </Routes>
     </BrowserRouter>
-  </StrictMode>
+  </StrictMode>,
 );
