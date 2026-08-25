@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 
 function Charts() {
   const [asteroids, setAsteroids] = useState([]);
-  const date = "2025-07-15"; // You can make this dynamic too
+  const date = new Date().toISOString().split("T")[0];
 
   useEffect(() => {
     async function fetchAsteroids() {

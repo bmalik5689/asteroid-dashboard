@@ -15,7 +15,7 @@ import {
 
 function App() {
   const [asteroids, setAsteroids] = useState([]);
-  const [date, setDate] = useState("2025-07-15");
+  const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
   const [searchTerm, setSearchTerm] = useState("");
   const [minSliderSpeed, setMinSliderSpeed] = useState(0);
 
@@ -34,11 +34,11 @@ function App() {
 
   const filtered = asteroids
     .filter((asteroid) =>
-      asteroid.name.toLowerCase().includes(searchTerm.toLowerCase())
+      asteroid.name.toLowerCase().includes(searchTerm.toLowerCase()),
     )
     .filter((asteroid) => {
       const speed = parseFloat(
-        asteroid.close_approach_data[0].relative_velocity.kilometers_per_hour
+        asteroid.close_approach_data[0].relative_velocity.kilometers_per_hour,
       );
       return !minSliderSpeed || speed >= minSliderSpeed;
     });
@@ -58,7 +58,7 @@ function App() {
   const diameterData = filtered.slice(0, 8).map((a) => ({
     name: a.name,
     diameter: parseFloat(
-      a.estimated_diameter.kilometers.estimated_diameter_max
+      a.estimated_diameter.kilometers.estimated_diameter_max,
     ),
   }));
 
@@ -68,8 +68,8 @@ function App() {
   const largest = filtered.length
     ? Math.max(
         ...filtered.map(
-          (a) => a.estimated_diameter.kilometers.estimated_diameter_max
-        )
+          (a) => a.estimated_diameter.kilometers.estimated_diameter_max,
+        ),
       ).toFixed(2)
     : "N/A";
 
