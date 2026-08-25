@@ -1,62 +1,37 @@
-Web Development Project 6 - 🚀 Asteroid Tracker Dashboard
+# 🚀 Asteroid Tracker Dashboard
 
-Submitted by: Bisma Naeem Malik
+A data visualization dashboard that pulls real-time data from NASA's Near-Earth Object API, letting users explore asteroids passing close to Earth — filterable by name and speed, with hazard-level breakdowns and diameter comparisons.
 
-This web app: This app visualizes real-time data from NASA’s Near-Earth Object API, letting users explore approaching asteroids by size, speed, and hazard level—all wrapped in a sleek, interactive dashboard.
+## Features
 
-Time spent: 10 hours spent in total
+- **Live NASA data** — fetches near-Earth object data for any selected date via NASA's NEO API
+- **Filtering** — search by asteroid name, filter by minimum approach speed
+- **Detail views** — each asteroid has its own URL (`/asteroid/:id`) with expanded orbital data
+- **Data visualization** — hazard breakdown (pie chart) and top asteroid diameters (bar chart), built with Recharts
+- **Loading and error states** — clear feedback while data is fetching or if the API request fails
 
-## Required Features
+## Tech Stack
 
-The following **required** functionality is completed:
+- React + Vite
+- React Router
+- Recharts
+- NASA NEO (Near-Earth Object) API
 
-- [x] **Clicking on an item in the list view displays more details about it**
-  - Clicking on an item in the dashboard list navigates to a detail view for that item
-  - Detail view includes extra information about the item not included in the dashboard view
-  - The same sidebar is displayed in detail view as in dashboard view
-  - _To ensure an accurate grade, your sidebar **must** be viewable when showing the details view in your recording._
-- [x] **Each detail view of an item has a direct, unique URL link to that item’s detail view page**
-  - _To ensure an accurate grade, the URL/address bar of your web browser **must** be viewable in your recording._
-- [x] **The app includes at least two unique charts developed using the fetched data that tell an interesting story**
-  - At least two charts should be incorporated into the dashboard view of the site
-  - Each chart should describe a different aspect of the dataset
+## Running Locally
 
-The following **optional** features are implemented:
+1. Clone the repo
 
-- [ ] The site’s customized dashboard contains more content that explains what is interesting about the data
-  - e.g., an additional description, graph annotation, suggestion for which filters to use, or an additional page that explains more about the data
-- [ ] The site allows users to toggle between different data visualizations
-  - User should be able to use some mechanism to toggle between displaying and hiding visualizations
+   git clone https://github.com/bmalik5689/asteroid-dashboard.git
+   cd asteroid-dashboard
 
-## Video Walkthrough
+2. Install dependencies
 
-Here's a walkthrough of implemented user stories:
+   npm install
 
-<img src=asteroidprojpart2.gif title='Video Walkthrough' width='' alt='Video Walkthrough' />
+3. Get a free NASA API key at api.nasa.gov and create a `.env` file in the project root:
 
-GIF created with LiceCap
+   VITE_APP_API_KEY=your_key_here
 
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+4. Run the dev server
 
-## Notes
-
-I faced difficulty while creating the graphs
-
-## License
-
-    Copyright [2025] [Bisma Malik]
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+   npm run dev
