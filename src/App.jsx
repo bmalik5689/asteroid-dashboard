@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useAsteroids } from "./hooks/useAsteroids";
 import { Link } from "react-router-dom";
 import "./App.css";
 import {
@@ -14,23 +15,10 @@ import {
 } from "recharts";
 
 function App() {
-  const [asteroids, setAsteroids] = useState([]);
   const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
   const [searchTerm, setSearchTerm] = useState("");
   const [minSliderSpeed, setMinSliderSpeed] = useState(0);
-
-  useEffect(() => {
-    async function fetchAsteroids() {
-      const apiKey = import.meta.env.VITE_APP_API_KEY;
-      const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${date}&end_date=${date}&api_key=${apiKey}`;
-      const response = await fetch(url);
-      const data = await response.json();
-      const allAsteroids = Object.values(data.near_earth_objects).flat();
-      setAsteroids(allAsteroids);
-    }
-
-    fetchAsteroids();
-  }, [date]);
+  const { asteroids, isLoading, error } = useAsteroids(date);
 
   const filtered = asteroids
     .filter((asteroid) =>
@@ -72,6 +60,18 @@ function App() {
         ),
       ).toFixed(2)
     : "N/A";
+
+  if (isLoading) {
+    return <p className="status-message">Loading asteroid data...</p>;
+  }
+
+  if (error) {
+    return (
+      <p className="status-message status-error">
+        Couldn't load asteroid data: {error}
+      </p>
+    );
+  }
 
   return (
     <div className="dashboard-flex">

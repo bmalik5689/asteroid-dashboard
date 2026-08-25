@@ -112,6 +112,18 @@ hr {
   margin: 20px 0;
 }
 
+/* Status Messages (loading / error) */
+.status-message {
+  text-align: center;
+  padding: 3rem 1rem;
+  font-size: 1.1rem;
+  color: #66fcf1;
+}
+
+.status-error {
+  color: #ff6b6b;
+}
+
 /* Responsive Adjustment */
 @media (max-width: 800px) {
   .dashboard-flex {
