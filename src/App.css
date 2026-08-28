@@ -78,6 +78,15 @@ input[type="checkbox"] {
   margin: 4px 0;
 }
 
+.hazard-yes {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+.hazard-no {
+  color: #1dd1a1;
+}
+
 /* Charts Section */
 .dashboard-flex {
   display: flex;
