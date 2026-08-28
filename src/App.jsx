@@ -61,6 +61,18 @@ function App() {
       ).toFixed(2)
     : "N/A";
 
+  const closest = filtered.length
+    ? filtered.reduce((min, a) => {
+        const dist = parseFloat(
+          a.close_approach_data[0].miss_distance.kilometers,
+        );
+        const minDist = parseFloat(
+          min.close_approach_data[0].miss_distance.kilometers,
+        );
+        return dist < minDist ? a : min;
+      })
+    : null;
+
   if (isLoading) {
     return <p className="status-message">Loading asteroid data...</p>;
   }
@@ -83,6 +95,11 @@ function App() {
           <p>Total Asteroids: {total}</p>
           <p>Hazardous Asteroids: {hazardousCount}</p>
           <p>Largest Diameter: {largest} km</p>
+          <p>
+            Closest Approach: {closest ? closest.name : "N/A"}
+            {closest &&
+              `- ${Math.round(parseFloat(closest.close_approach_data[0].miss_distance.kilometers)).toLocaleString()} km away`}
+          </p>
         </div>
 
         <label>
