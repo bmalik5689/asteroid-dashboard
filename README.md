@@ -1,6 +1,7 @@
 # 🚀 Asteroid Tracker Dashboard
 
 A data visualization dashboard that pulls real-time data from NASA's Near-Earth Object API, letting users explore asteroids passing close to Earth — filterable by name and speed, with hazard-level breakdowns and diameter comparisons.
+🔗 Live site: https://asteroid-dashboard-five.vercel.app 📂 Repo: https://github.com/bmalik5689/asteroid-dashboard.git
 
 ## Features
 
